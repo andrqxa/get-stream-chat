@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: getstream-pb-demo
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:3000"
+    volumes:
+      - pb-data:/app/pb_data
+    restart: unless-stopped
+
+volumes:
+  pb-data:

@@ -1,0 +1,17 @@
+# Short imperative summary (max ~70 chars)
+# Examples:
+#   Add initial PocketBase schema
+#   Implement chat token endpoint
+#   Wire dependencies in main
+#
+# Tip: Use a verb in imperative form: Add / Fix / Refactor / Remove / Update
+
+<summary>
+
+# Optional details (can be empty):
+# - what changed and why
+# - notable behavior changes
+# - follow-ups or risks
+# - bullet points are welcome
+
+<details if needed>
