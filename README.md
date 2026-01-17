@@ -127,3 +127,7 @@ Out of scope:
 * PocketBase (embedded)
 * GetStream Chat
 * Docker / Docker Compose
+
+## License
+
+MIT
