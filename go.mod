@@ -3,6 +3,7 @@ module get-stream-chat
 go 1.25.1
 
 require (
+	github.com/GetStream/stream-chat-go/v5 v5.8.1
 	github.com/joho/godotenv v1.5.1
 	github.com/pocketbase/pocketbase v0.36.0
 )
@@ -16,6 +17,7 @@ require (
 	github.com/gabriel-vasile/mimetype v1.4.12 // indirect
 	github.com/ganigeorgiev/fexpr v0.5.0 // indirect
 	github.com/go-ozzo/ozzo-validation/v4 v4.3.0 // indirect
+	github.com/golang-jwt/jwt/v4 v4.0.0 // indirect
 	github.com/golang-jwt/jwt/v5 v5.3.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
