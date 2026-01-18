@@ -35,14 +35,24 @@ func Load() (*Config, error) {
 		return nil, err
 	}
 
+	streamAPIKey, err := getEnvRequired("STREAM_API_KEY")
+	if err != nil {
+		return nil, err
+	}
+
+	streamAPISecret, err := getEnvRequired("STREAM_API_SECRET")
+	if err != nil {
+		return nil, err
+	}
+
 	cfg := &Config{
 		Port:            getEnvDefault("PORT", "3000"),
 		LogLevel:        getEnvDefault("LOG_LEVEL", "info"),
 		PBAdminEmail:    pbAdminEmail,
 		PBAdminPassword: pbAdminPassword,
 		PBDataDir:       pbDataDir,
-		StreamAPIKey:    getEnvDefault("STREAM_API_KEY", ""),
-		StreamAPISecret: getEnvDefault("STREAM_API_SECRET", ""),
+		StreamAPIKey:    streamAPIKey,
+		StreamAPISecret: streamAPISecret,
 		StreamAppID:     getEnvDefault("STREAM_APP_ID", ""),
 	}
 
