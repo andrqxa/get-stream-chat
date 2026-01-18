@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"get-stream-chat/internal/stream"
 
 	"get-stream-chat/internal/config"
 
@@ -10,8 +11,9 @@ import (
 )
 
 type App struct {
-	cfg *config.Config
-	pb  *pocketbase.PocketBase
+	cfg    *config.Config
+	pb     *pocketbase.PocketBase
+	stream *stream.Client
 }
 
 func New(cfg *config.Config) (*App, error) {
@@ -26,9 +28,18 @@ func New(cfg *config.Config) (*App, error) {
 		return se.Next()
 	})
 
+	streamClient, err := stream.New(stream.Config{
+		APIKey:    cfg.StreamAPIKey,
+		APISecret: cfg.StreamAPISecret,
+	})
+	if err != nil {
+		return nil, err
+	}
+
 	return &App{
-		cfg: cfg,
-		pb:  pb,
+		cfg:    cfg,
+		pb:     pb,
+		stream: streamClient,
 	}, nil
 }
 
